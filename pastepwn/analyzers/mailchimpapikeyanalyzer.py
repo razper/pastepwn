@@ -2,8 +2,8 @@
 from .regexanalyzer import RegexAnalyzer
 
 
-class StripeApiKeyAnalyzer(RegexAnalyzer):
+class MailChimpApiKeyAnalyzer(RegexAnalyzer):
 
     def __init__(self, actions):
-        regex = r'(?:r|s)k_(live|test)_[0-9a-zA-Z]{24}'
+        regex = r"[0-9a-f]{32}-us[0-9]{12}"
         super().__init__(actions, regex)
